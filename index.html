@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BrightWave Digital — Digital Marketing Agency</title>
+  <meta name="description" content="BrightWave Digital — Full-service digital marketing agency: SEO, PPC, Social, Content, Design & Analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#22c55e; /* green */
+      --accent-2:#06b6d4; /* cyan */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071028 0%, #071823 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:24px 16px;
+      display:flex;
+      justify-content:center;
+      font-size:16px;
+    }
+    .container{width:100%;max-width:var(--max-width)}
+
+    /* NAV */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;background:linear-gradient(135deg,var(--accent),var(--accent-2));border-radius:10px;display:grid;place-items:center;font-weight:800;color:#04212a}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#04212a;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+    .menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:10px}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:28px 0}
+    .eyebrow{color:var(--accent);font-weight:700}
+    h1{font-size:clamp(28px,4.6vw,44px);margin:6px 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:18px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .feature{flex:1 1 130px;background:var(--glass);padding:12px;border-radius:12px}
+    .feature h4{margin:0 0 6px}
+    .kpis{display:flex;gap:12px;margin-top:14px}
+    .kpi{background:#021022;padding:12px;border-radius:12px;flex:1;text-align:center}
+
+    /* SERVICES */
+    section{margin:36px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);padding:18px;border-radius:12px}
+
+    /* PORTFOLIO */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .thumb{height:150px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:flex-end;padding:12px}
+
+    /* TESTIMONIALS */
+    .testimonials{display:flex;gap:12px;overflow:auto;padding-bottom:8px}
+    .testimonial{min-width:230px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px}
+
+    /* PRICING */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .price-card{background:linear-gradient(180deg, rgba(6,7,12,0.6), rgba(2,4,8,0.3));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+
+    /* CONTACT */
+    .contact-form{display:grid;gap:12px}
+    input,textarea,button{border:0;background:#031124;padding:12px;border-radius:10px;color:inherit}
+    input::placeholder,textarea::placeholder{color:var(--muted)}
+    .small{font-size:0.9rem;color:var(--muted)}
+
+    footer{padding:20px 0;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .portfolio-grid,.grid,.pricing{grid-template-columns:repeat(2,1fr)}
+      nav{display:none}
+      .menu-btn{display:inline-block}
+    }
+    @media (max-width:560px){
+      body{padding:16px}
+      .portfolio-grid,.grid,.pricing{grid-template-columns:1fr}
+      .testimonials{gap:10px}
+    }
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700}
+
+    /* subtle animation */
+    [data-animate]{opacity:0;transform:translateY(8px);transition:all 520ms cubic-bezier(.2,.9,.25,1)}
+    [data-animate].in{opacity:1;transform:none}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">BW</div>
+        <div>
+          <div style="font-weight:800">BrightWave Digital</div>
+          <div class="small muted">Growth-focused marketing</div>
+        </div>
+      </div>
+
+      <nav aria-label="primary navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Get a Proposal</a>
+      </nav>
+
+      <button class="menu-btn" id="menuToggle" aria-expanded="false">☰</button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <div class="eyebrow">We scale brands</div>
+          <h1 id="hero-title">Digital marketing that turns clicks into customers.</h1>
+          <p class="lead">Full-funnel services: performance marketing, SEO, content, creative, and analytics — built to grow sustainable revenue for startups and enterprises.</p>
+
+          <div style="display:flex;gap:12px;align-items:center">
+            <a class="cta" href="#contact">Start a Project</a>
+            <a href="#work" class="small muted">See our case studies →</a>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+            <div class="pill">SEO</div>
+            <div class="pill">PPC</div>
+            <div class="pill">Social Ads</div>
+            <div class="pill">Content</div>
+          </div>
+
+          <div class="kpis" style="margin-top:18px">
+            <div class="kpi">
+              <div style="font-size:18px;font-weight:800">+120%</div>
+              <div class="small muted">Avg. YoY Revenue Growth</div>
+            </div>
+            <div class="kpi">
+              <div style="font-size:18px;font-weight:800">$3.2M</div>
+              <div class="small muted">Ad spend managed</div>
+            </div>
+            <div class="kpi">
+              <div style="font-size:18px;font-weight:800">98%</div>
+              <div class="small muted">Client satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Quick services card" data-animate>
+          <h3 style="margin:0 0 8px">Quick Service Snapshot</h3>
+          <div class="features">
+            <div class="feature">
+              <h4 style="margin:0">SEO Audit</h4>
+              <div class="small muted">Technical + content + backlinks</div>
+            </div>
+            <div class="feature">
+              <h4 style="margin:0">Paid Ads</h4>
+              <div class="small muted">Search, social & retargeting</div>
+            </div>
+            <div class="feature">
+              <h4 style="margin:0">Analytics</h4>
+              <div class="small muted">Measurement & dashboarding</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="small muted">Recent wins</div>
+            <div style="display:flex;gap:10px;margin-top:8px">
+              <div style="flex:1;background:#021827;padding:8px;border-radius:8px;text-align:center">
+                <div style="font-weight:800">+54%</div>
+                <div class="small muted">Organic traffic</div>
+              </div>
+              <div style="flex:1;background:#021827;padding:8px;border-radius:8px;text-align:center">
+                <div style="font-weight:800">33%</div>
+                <div class="small muted">Lower CPA</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="services">
+        <h2>Our Services</h2>
+        <p class="muted small">Tailored packages to fit budgets and growth stage.</p>
+        <div class="grid" style="margin-top:14px">
+          <div class="card" data-animate>
+            <h3>Search Engine Optimization</h3>
+            <p class="small muted">Technical audits, on-page optimization, content strategy and link building.</p>
+          </div>
+          <div class="card" data-animate>
+            <h3>Paid Media</h3>
+            <p class="small muted">Google Ads, Microsoft Ads, Meta, TikTok — creative + bidding + measurement.</p>
+          </div>
+          <div class="card" data-animate>
+            <h3>Content & Creative</h3>
+            <p class="small muted">Branded content, landing pages, video scripts and social creative.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <h2>Selected Work</h2>
+        <p class="small muted">Campaigns that delivered measurable growth.</p>
+        <div class="portfolio-grid" style="margin-top:14px">
+          <div class="thumb" data-animate style="background-image:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35));background-size:cover;">
+            <div>
+              <strong>HealthTech Growth</strong>
+              <div class="small muted">+3.4x MQLs</div>
+            </div>
+          </div>
+          <div class="thumb" data-animate>
+            <div>
+              <strong>SaaS Launch</strong>
+              <div class="small muted">$1.8M ARR first year</div>
+            </div>
+          </div>
+          <div class="thumb" data-animate>
+            <div>
+              <strong>EV Brand</strong>
+              <div class="small muted">Brand lift 62%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <h2>What clients say</h2>
+        <div class="testimonials" style="margin-top:14px">
+          <div class="testimonial" data-animate>
+            <strong>Arjun — CEO</strong>
+            <div class="small muted">"BrightWave helped us cut CPA and scale profitably within 90 days."</div>
+          </div>
+          <div class="testimonial" data-animate>
+            <strong>Priya — Marketing Head</strong>
+            <div class="small muted">"Their content + SEO pipeline moved us into top 3 for 20+ keywords."</div>
+          </div>
+          <div class="testimonial" data-animate>
+            <strong>Ravi — Founder</strong>
+            <div class="small muted">"Transparent reporting and the team feels like an extension of ours."</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <h2>Pricing</h2>
+        <p class="small muted">Simple, predictable pricing — custom plans available.</p>
+        <div class="pricing" style="margin-top:14px">
+          <div class="price-card" data-animate>
+            <h3>Starter</h3>
+            <div style="font-weight:800;font-size:20px;margin:8px 0">$1,500/mo</div>
+            <div class="small muted">Great for early-stage startups</div>
+          </div>
+          <div class="price-card" data-animate>
+            <h3>Growth</h3>
+            <div style="font-weight:800;font-size:20px;margin:8px 0">$4,500/mo</div>
+            <div class="small muted">Scaling / revenue-driven teams</div>
+          </div>
+          <div class="price-card" data-animate>
+            <h3>Enterprise</h3>
+            <div style="font-weight:800;font-size:20px;margin:8px 0">Custom</div>
+            <div class="small muted">Tailored programs & SLA</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p class="small muted">Share a few details and we'll send a proposal.</p>
+        <form class="contact-form" onsubmit="return submitForm(event)">
+          <input required id="name" placeholder="Your name" />
+          <input required id="company" placeholder="Company" />
+          <input required id="email" type="email" placeholder="Email address" />
+          <textarea id="message" rows="4" placeholder="Tell us about your goals"></textarea>
+          <div style="display:flex;gap:12px;align-items:center">
+            <button type="submit" class="cta">Send proposal</button>
+            <div class="small muted">Or email us at <strong>hello@brightwave.example</strong></div>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="small muted">© <span id="year"></span> BrightWave Digital — All rights reserved.</div>
+      <div class="small muted">Designed with ♥ — <a href="#" style="color:var(--muted);text-decoration:none">Privacy</a> • <a href="#" style="color:var(--muted);text-decoration:none">Terms</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers: mobile nav toggle & simple scroll animations
+    const menuBtn = document.getElementById('menuToggle');
+    menuBtn && menuBtn.addEventListener('click', ()=>{
+      const nav = document.querySelector('nav');
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      if(nav.style.display === 'flex' || nav.style.display === ''){
+        nav.style.display = 'none';
+      } else nav.style.display = 'flex';
+    });
+
+    // insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // tiny form handler (demo only)
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!name || !email){
+        alert('Please enter name and email.');
+        return false;
+      }
+      // Simulate submit — replace with fetch/ajax to send to your server
+      alert('Thanks ' + name + '! We received your request and will email ' + email + ' — (demo).');
+      e.target.reset();
+      return false;
+    }
+
+    // reveal on scroll for elements with [data-animate]
+    function reveal(){
+      const els = document.querySelectorAll('[data-animate]');
+      const threshold = window.innerHeight * 0.9;
+      els.forEach(el=>{
+        const rect = el.getBoundingClientRect();
+        if(rect.top < threshold){ el.classList.add('in') }
+      })
+    }
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('resize', reveal);
+    document.addEventListener('DOMContentLoaded', ()=>{reveal();});
+  </script>
+</body>
+</html>
